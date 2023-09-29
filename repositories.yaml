@@ -10,6 +10,11 @@
   has_projects: false
   has_wiki: true
   gitignore_template: "java"
+  teams:
+    management: triage
+    back-end: maintain
+    front-end: pull
+
 
 - name: clavitos-service-ui
   description: Clavitos frontend graphical user interface
@@ -20,6 +25,9 @@
   has_projects: false
   has_wiki: true
   gitignore_template: "javascript"
+  teams:
+    management: triage
+    front-end: maintain
 
 - name: clavitos-service-ios-sdk
   description: Clavitos ios software development kit
@@ -30,3 +38,7 @@
   has_projects: false
   has_wiki: true
   gitignore_template: "ios"
+  teams:
+    management: triage
+    back-end: maintain
+    front-end: maintain

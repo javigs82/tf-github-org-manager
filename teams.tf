@@ -11,11 +11,17 @@ resource "github_team" "all" {
 }
 
 resource "github_team_membership" "members" {
-  for_each = { for tm in local.team_members : tm.team_id => tm }
+  for_each = { for tm in local.team_members : tm.name => tm }
 
   team_id  = each.value.team_id
   username = each.value.username
   role     = each.value.role
 }
 
+resource "github_team_repository" "repositories" {
+  for_each = { for tm in local.team_repositories : tm.name => tm }
 
+  team_id    = each.value.team_id
+  repository = each.value.repository
+  permission = each.value.permission
+}

@@ -8,20 +8,24 @@ locals {
   team_members = flatten([
     for tn, t in github_team.all : [
       for memb in local.members : {
-        name    = t.name
-        team_id = t.id
+        name     = "${t.slug}-${memb.username}" # unique! to use as a key map
+        team_id  = t.id
         username = memb.username
-        role = memb.teams[t.name]
-      } if lookup(memb.teams, t.name, "NULL") != "NULL"
+        role     = memb.teams[t.name]
+      } if lookup(memb.teams, t.name, null) != null
     ]
   ])
 
-  
 
-  # Parse repo team membership files
-  repo_teams_path = "repos-team"
-  repo_teams_files = {
-    for file in fileset(local.repo_teams_path, "*.csv") :
-    trimsuffix(file, ".csv") => csvdecode(file("${local.repo_teams_path}/${file}"))
-  }
+  # iterate over all github_team & local.repositories that contains a map of teams (<team_name>:<permission>)
+  team_repositories = flatten([
+    for tn, t in github_team.all : [
+      for rep in local.repositories : {
+        name = "${t.slug}-${rep.name}" # unique! to use as a key map
+        team_id    = t.id
+        repository = rep.name
+        permission = rep.teams[t.name]
+      } if lookup(rep.teams, t.name, null) != null
+    ]
+  ])
 }

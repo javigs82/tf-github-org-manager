@@ -1,10 +1,11 @@
 # tf-github-org-manager
+
 Terraform code to manage github organizations.
 
 ## Prerequisites
 
  - Github account with the organization created
- - Terraform 1.0.5
+ - Terraform 1.5+
 
 ## Assumptions
 
@@ -13,7 +14,7 @@ Terraform code to manage github organizations.
     - The `repo` permisison for full control of repositories.
     - The `admin:org` permission for full control of orgs and teams, read and write org projects
   - Repositories will never be deleted in terms of reducing blast radious. Instead, they will be *archived* (and manual deleted in case)
-  - The root team is "security team"
+  - Due to the nature of this exercise, terraform state is not a remote state and does not implement locks
 
 ## How to run it
 
@@ -42,26 +43,20 @@ Adding a new repository quickly and easily within a GitHub Organisation. Even th
   - Whether the repository has Issues, Projects, Discussions, or Wiki enabled.
   - Repositories cannot be deleted but archived in order to reduce blast radious
 
-For more info about the repository model [click here](./repositories.yaml)
+For more info about the repository model [click here](./repositories.yaml). Note that the relation between team and repository (ManyToMany) is defined in  `repositories.yaml`
 
-### Manage Users
+### Manage Users & Teams
 
 The organization needs to add users that can be alloacted into 1 or more teams. The level of access to repositories will be different depending on the team,
 so at least following option must be accomplished
 
  - Create teams
  - Assign members to the teams
- - Assign repositories to the teams. At the moment of writing, those can be: 
+ - Assign repositories & permissions to the teams. The permission of the team members must be one of `pull`,`triage`,`push`,`mantain`, or `admin`
 
-For more info about the team model [click here](./teams.yaml)
+For more info about the team model [click here](./teams.yaml). 
 
-### Use Case 3
-
-## Design
-
-## Implementation
-
-## Caveats
+For more info about the member model [click here](./members.yaml). Note that the relation between team and member (ManyToMany) is defined in  `members.yaml`
 
 ## References
 

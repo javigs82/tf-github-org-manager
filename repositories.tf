@@ -18,7 +18,4 @@ resource "github_repository" "all" {
 
   # this will disable write operations in the repository (read only mode)
   archived = each.value.archived
-
 }
-
-
