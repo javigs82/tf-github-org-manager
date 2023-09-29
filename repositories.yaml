@@ -1,0 +1,30 @@
+---
+- name: clavitos-service-api 
+  description: Clavitos backend services
+  visibility: "private"
+  archived: false
+  has_issues: true
+  has_downloads: false
+  has_projects: false
+  has_wiki: true
+  gitignore_template: "java"
+
+- name: clavitos-service-ui
+  description: Clavitos frontend graphical user interface
+  visibility: "private"
+  archived: false
+  has_issues: true
+  has_downloads: false
+  has_projects: false
+  has_wiki: true
+  gitignore_template: "javascript"
+
+- name: clavitos-service-ios-sdk
+  description: Clavitos ios software development kit
+  visibility: "public"
+  archived: false
+  has_issues: true
+  has_downloads: true
+  has_projects: false
+  has_wiki: true
+  gitignore_template: "ios"

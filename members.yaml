@@ -1,0 +1,13 @@
+---
+- username: javigs82
+  email: javigs82@gmail.com
+  role: member
+  team_names: 
+    - sre
+    - backend
+
+- username: teodoris
+  email: teodoroprieto69@gmail.com
+  role: member
+  team_names: 
+    - front-end

@@ -1,0 +1,18 @@
+---
+ - team_name: front-end
+   description:
+   parent_team: null
+   visibility: true
+   team_notifications: true
+  
+ - team_name: backend-end
+   description:
+   parent_team: null
+   visibility: true
+   team_notifications: true
+  
+ - team_name: sre 
+   description:
+   parent_team: null
+   visibility: true
+   team_notifications: true
