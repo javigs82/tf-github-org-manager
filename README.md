@@ -67,6 +67,9 @@ For more info about the team model [click here](./teams.yaml)
 
  - https://registry.terraform.io/providers/integrations/github/latest/docs
 
+ - https://github.com/integrations/terraform-provider-github/issues/1064
+
+
 ## Author
 
  - javigs82 [github](https://github.com/javigs82/)

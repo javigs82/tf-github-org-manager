@@ -1,0 +1,30 @@
+---
+# teams: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team
+
+ - name: management
+   description: management team in charge of the organization 
+   parent_team: null
+   privacy: secret
+   members: 
+     - javigs82
+     - manolito
+   
+ - name: front-end
+   description: frontenders team
+   parent_team: null
+   privacy: closed
+   members: []
+  
+ - name: back-end
+   description: backend team
+   parent_team: null
+   privacy: closed
+   members:
+     - javigs82
+  
+ - name: sre 
+   description: site reliability engineering team
+   parent_team: null
+   privacy: closed
+   members:
+     - javigs82

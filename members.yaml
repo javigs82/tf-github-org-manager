@@ -1,13 +1,16 @@
 ---
+# https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership
+# each member contains a map of teams in the form <team_name>:<role>
+
 - username: javigs82
   email: javigs82@gmail.com
-  role: member
-  team_names: 
-    - sre
-    - backend
+  role: admin
+  teams:
+    back-end: maintainer
+    sre: member
 
 - username: teodoris
   email: teodoroprieto69@gmail.com
   role: member
-  team_names: 
-    - front-end
+  teams:
+    front-end: member
