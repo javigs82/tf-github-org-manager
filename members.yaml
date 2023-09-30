@@ -3,14 +3,12 @@
 # each member contains a map of teams in the form <team_name>:<role>
 
 - username: javigs82
-  email: javigs82@gmail.com
   role: admin
   teams:
     back-end: maintainer
     sre: member
 
 - username: teodoris
-  email: teodoroprieto69@gmail.com
   role: member
   teams:
     front-end: member
